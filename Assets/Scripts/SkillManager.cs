@@ -12,10 +12,14 @@ public class SkillManager : MonoBehaviour {
     }
     public Smash Smash;
     public Bash Bash;
-    public Charge Charge;    
+    public Charge Charge;
+    public Deffence Deffence;
+
+    public Sword Sword;
+    public Spear Spear;
 
     public List<Skill> AllSkills = new List<Skill>();
-    public List<AcherActiveSkill> AcherActSkills = new List<AcherActiveSkill>();
+    public List<PlayerActiveSkill> PlayerActSkills = new List<PlayerActiveSkill>();
 
     void Start()
     {
@@ -23,15 +27,16 @@ public class SkillManager : MonoBehaviour {
     }
     public void Setting()
     {
-        AllSkills.Add(Smash);   AllSkills.Add(Bash);    AllSkills.Add(Charge);
+        AllSkills.Add(Smash);   AllSkills.Add(Bash);    AllSkills.Add(Charge);  AllSkills.Add(Deffence); AllSkills.Add(Sword); AllSkills.Add(Spear);
 
         foreach(Skill sk in AllSkills)
         {
-            if(sk is AcherActiveSkill)
+            if(sk is PlayerActiveSkill)
             {
-                AcherActiveSkill thisSkill = sk as AcherActiveSkill;
-                thisSkill.BelongToWho = Characters.Acher;
-                AcherActSkills.Add(thisSkill);
+                PlayerActiveSkill thisSkill = sk as PlayerActiveSkill;
+                thisSkill.mono = this;
+                thisSkill.BelongToWho = Characters.Player;
+                PlayerActSkills.Add(thisSkill);
             }
         }
     }

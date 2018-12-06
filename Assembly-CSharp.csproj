@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{293E5D0A-BD29-1644-B652-5C86C180574C}</ProjectGuid>
+    <ProjectGuid>{4019FC6C-7110-8EF6-9038-25CDFA29FBC8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -65,22 +65,23 @@
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Classes.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\KeyMap.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\ScenesMove.cs" />
     <Compile Include="Assets\Scripts\SkillManager.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
     <Compile Include="Assets\TooCubeForest\demoScenes\Movement.cs" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/lilis/OneDrive/Documents/프로토타입/BeltProto (3)/BeltProto (3)/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/lilis/OneDrive/Documents/프로토타입/BeltProto (3)/BeltProto (3)/3rd-Proto/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/lilis/OneDrive/Documents/프로토타입/BeltProto (3)/BeltProto (3)/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/lilis/OneDrive/Documents/프로토타입/BeltProto (3)/BeltProto (3)/3rd-Proto/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/lilis/OneDrive/Documents/프로토타입/BeltProto (3)/BeltProto (3)/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/lilis/OneDrive/Documents/프로토타입/BeltProto (3)/BeltProto (3)/3rd-Proto/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/lilis/OneDrive/Documents/프로토타입/BeltProto (3)/BeltProto (3)/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/lilis/OneDrive/Documents/프로토타입/BeltProto (3)/BeltProto (3)/3rd-Proto/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

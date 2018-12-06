@@ -9,6 +9,7 @@ public class Classes : MonoBehaviour
 public interface Skill
 {
 }
+
 [System.Serializable]
 public abstract class SkillBase : Skill
 {
@@ -16,11 +17,19 @@ public abstract class SkillBase : Skill
     public Characters BelongToWho;    
     public Sprite SkillIcon;
     public string Description;
+    public MonoBehaviour mono;
+
+    public virtual void SkillExecute()
+    {
+        Debug.Log("이건 " + Name + "의 스킬 실행 기본 펑션");
+    }
 }
+[System.Serializable]
 public enum Characters
 {
-    Warrior, Acher, Magician
+    Player
 }
+
 
 [System.Serializable]
 public abstract class ActiveSkill : SkillBase
@@ -30,34 +39,58 @@ public abstract class ActiveSkill : SkillBase
 }
 
 [System.Serializable]
-public abstract class AcherActiveSkill : ActiveSkill
+public abstract class PlayerActiveSkill : ActiveSkill
 {
-    public AcherSkillCategory Category;
-    public AcherResource RequireResource;
+    public PlayerSkillCategory Category;
+    public PlayerResource RequireResource;
 }
-public enum AcherResource
+public enum PlayerResource
 {
     Mp, St
 }
-public enum AcherSkillCategory
+public enum PlayerSkillCategory
 {
-    Act1, Act2, Act3
+    Skill,Equipment
 }
 
-
-
 [System.Serializable]
-public class Smash : AcherActiveSkill
+public class Smash : PlayerActiveSkill
 {
 
 }
 [System.Serializable]
-public class Bash : AcherActiveSkill
+public class Bash : PlayerActiveSkill
+{
+    public override void SkillExecute()
+    {
+        
+        Debug.Log("이건 강타 스킬 override 펑션");
+        mono.StartCoroutine(BashCoroutine());        
+    }
+    IEnumerator BashCoroutine()
+    {
+        Debug.Log("강타 코루틴 첫번째");
+        yield return new WaitForSeconds(2);
+        Debug.Log("강타 코루틴 끝");
+    }
+}
+[System.Serializable]
+public class Charge : PlayerActiveSkill
 {
 
 }
 [System.Serializable]
-public class Charge : AcherActiveSkill
+public class Deffence : PlayerActiveSkill
+{
+
+}
+[System.Serializable]
+public class Sword : PlayerActiveSkill
+{
+
+}
+[System.Serializable]
+public class Spear : PlayerActiveSkill
 {
 
 }

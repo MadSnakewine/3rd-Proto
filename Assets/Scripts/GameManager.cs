@@ -17,6 +17,11 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if(Input.GetMouseButtonDown(1))
+        {
+            GameObject.Find("Canvas").transform.Find("SkillWindow").gameObject.SetActive(true);
+            
+        }
+        
 	}
 }
