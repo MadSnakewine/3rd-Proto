@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Classes : MonoBehaviour
+public class SkillInfo : MonoBehaviour
 {
 }
 public interface Skill
