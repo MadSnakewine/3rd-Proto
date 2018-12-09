@@ -1,12 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
 
     public float maxSpeed = 4;
     public float jumpForce = 400;
     public float minHeight, maxHeight;
+
+    public float maxHp = 100.0f; 
+    public float HP = 100.0f;
+    public float maxUltimate = 100.0f;
+    public float ultimate= 0.0f; //궁극기 게이지
 
     private float currentSpeed;
     private Rigidbody rb;
@@ -16,17 +22,22 @@ public class Player : MonoBehaviour {
     private bool isDead = false;
     private bool facingRight = true;
     private bool jump = false;
+    
+    private Slider hpGage;
+    private Slider ultimateGage;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         groundCheck = gameObject.transform.Find("GroundCheck");
 
         currentSpeed = maxSpeed;
-		
-	}
+
+        hpGage = GameObject.Find("Canvas").transform.Find("HpGage").GetComponent<Slider>();
+        ultimateGage = GameObject.Find("Canvas").transform.Find("UltimateGage").GetComponent<Slider>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -35,6 +46,16 @@ public class Player : MonoBehaviour {
 
         anim.SetBool("OnGround", onGround);
         anim.SetBool("Dead", isDead);
+
+        hpGage.value = HP / maxHp;
+        ultimateGage.value = ultimate / maxUltimate;
+
+        if (Input.GetKey(KeyCode.C))
+        {
+            HP -= 10;
+
+            ultimate += 8;
+        }
 
         if(Input.GetButtonDown("Jump")&&onGround)
         {

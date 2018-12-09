@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class UIManager : MonoBehaviour {
 
     public static UIManager Instance;
+
+    public Canvas canvas; //DontDestroyOnLoad
 
     void Start()
     {
@@ -15,6 +18,7 @@ public class UIManager : MonoBehaviour {
     void Awake()
     {
         Instance = this;
+        DontDestroyOnLoad(canvas);
     }
     public Text CategoryText;
     public void CategoryBtnPressed(bool LeftBtn)
@@ -56,7 +60,7 @@ public class UIManager : MonoBehaviour {
         //}
 
         foreach(PlayerActiveSkill skill in SkillManager.Instance.PlayerActSkills)
-        {
+        { 
             if(skill.Category == category)
             {
                 GameObject go = Instantiate(SkillIconObj);
@@ -71,7 +75,21 @@ public class UIManager : MonoBehaviour {
         }
     }
     
-    public int changePos =1;
+     int changePos = 1;
+
+    public void SkillInven()
+    {
+        for (int i = 0; i < KeyUIs.Length; i++)
+        {
+            if(KeyUIs[i].name == EventSystem.current.currentSelectedGameObject.name) // KeyUIs 자식이랑  스킬창안에 있는 QWE 버튼 누른것이 같으면 
+            {
+                changePos = i; // KeyUIs 자식번호 대입
+                break;
+            }
+        }
+        
+    }
+
     public void SkillChangeAccept()
     {
         ChangeSkillKey(changePos, currentSkill);
@@ -79,8 +97,19 @@ public class UIManager : MonoBehaviour {
     public GameObject[] KeyUIs;
     public void ChangeSkillKey(int where, PlayerActiveSkill skill)
     {
-        KeyUIs[where - 1].GetComponent<Image>().sprite = skill.SkillIcon;
+        for(int i = 0; i < KeyUIs.Length; i++)
+        {
+            if (KeyUIs[i].GetComponent<Image>().sprite == skill.SkillIcon) // KeyUIs자식에 같은 스프라이트 이미지가 있는지 확인
+            {
+                Debug.Log("중복");
+                return;
+            }
+        }
+
+        KeyUIs[where].GetComponent<Image>().sprite = skill.SkillIcon;
         KeyMap.Instance.SetKeyFunc(where, skill.SkillExecute);
+
+        return;
     }
     public PlayerActiveSkill currentSkill;
     public void SkillBtnPressed(Button btn)

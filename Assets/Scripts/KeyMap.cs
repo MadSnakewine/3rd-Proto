@@ -23,13 +23,13 @@ public class KeyMap : MonoBehaviour {
     {
         switch(where)
         {
-            case 1:
+            case 0:
                 KeyQFunc = func;
                 break;
-            case 2:
+            case 1:
                 KeyWFunc = func;
                 break;
-            case 3:
+            case 2:
                 KeyEFunc = func;
                 break;
         }
