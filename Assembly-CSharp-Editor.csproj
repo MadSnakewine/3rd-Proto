@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{BC0EB2CB-B09B-EF96-02EA-FBBB0F570863}</ProjectGuid>
+    <ProjectGuid>{17F910AF-1588-F1D8-C22E-7F37E2A10078}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -61,20 +61,48 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Demigiant\DOTweenPro\Editor\DOTweenAnimationInspector.cs" />
-    <Compile Include="Assets\Demigiant\DOTweenPro\Editor\DOTweenPreviewManager.cs" />
-    <None Include="Assets\Demigiant\DemiLib\Core\Editor\DemiEditor.xml" />
+    <Compile Include="Assets\SpineTool\spine-unity\Assets\spine-unity\Editor\AnimationReferenceAssetEditor.cs" />
+    <Compile Include="Assets\SpineTool\spine-unity\Assets\spine-unity\Editor\AssetDatabaseAvailabilityDetector.cs" />
+    <Compile Include="Assets\SpineTool\spine-unity\Assets\spine-unity\Editor\AtlasAssetInspector.cs" />
+    <Compile Include="Assets\SpineTool\spine-unity\Assets\spine-unity\Editor\BoneFollowerInspector.cs" />
+    <Compile Include="Assets\SpineTool\spine-unity\Assets\spine-unity\Editor\Menus.cs" />
+    <Compile Include="Assets\SpineTool\spine-unity\Assets\spine-unity\Editor\PointFollowerEditor.cs" />
+    <Compile Include="Assets\SpineTool\spine-unity\Assets\spine-unity\Editor\SkeletonAnimationInspector.cs" />
+    <Compile Include="Assets\SpineTool\spine-unity\Assets\spine-unity\Editor\SkeletonAnimatorInspector.cs" />
+    <Compile Include="Assets\SpineTool\spine-unity\Assets\spine-unity\Editor\SkeletonBaker.cs" />
+    <Compile Include="Assets\SpineTool\spine-unity\Assets\spine-unity\Editor\SkeletonBakingWindow.cs" />
+    <Compile Include="Assets\SpineTool\spine-unity\Assets\spine-unity\Editor\SkeletonDataAssetInspector.cs" />
+    <Compile Include="Assets\SpineTool\spine-unity\Assets\spine-unity\Editor\SkeletonDebugWindow.cs" />
+    <Compile Include="Assets\SpineTool\spine-unity\Assets\spine-unity\Editor\SkeletonRendererInspector.cs" />
+    <Compile Include="Assets\SpineTool\spine-unity\Assets\spine-unity\Editor\SpineAttributeDrawers.cs" />
+    <Compile Include="Assets\SpineTool\spine-unity\Assets\spine-unity\Editor\SpineEditorUtilities.cs" />
+    <Compile Include="Assets\SpineTool\spine-unity\Assets\spine-unity\Editor\SpineInspectorUtility.cs" />
+    <Compile Include="Assets\SpineTool\spine-unity\Assets\spine-unity\Modules\BoundingBoxFollower\Editor\BoundingBoxFollowerInspector.cs" />
+    <Compile Include="Assets\SpineTool\spine-unity\Assets\spine-unity\Modules\CustomMaterials\Editor\SkeletonRendererCustomMaterialsInspector.cs" />
+    <Compile Include="Assets\SpineTool\spine-unity\Assets\spine-unity\Modules\Ragdoll\Editor\SkeletonRagdoll2DInspector.cs" />
+    <Compile Include="Assets\SpineTool\spine-unity\Assets\spine-unity\Modules\Ragdoll\Editor\SkeletonRagdollInspector.cs" />
+    <Compile Include="Assets\SpineTool\spine-unity\Assets\spine-unity\Modules\Shaders\Sprite\Editor\SpineSpriteShaderGUI.cs" />
+    <Compile Include="Assets\SpineTool\spine-unity\Assets\spine-unity\Modules\SkeletonGraphic\Editor\BoneFollowerGraphicInspector.cs" />
+    <Compile Include="Assets\SpineTool\spine-unity\Assets\spine-unity\Modules\SkeletonGraphic\Editor\SkeletonGraphicInspector.cs" />
+    <Compile Include="Assets\SpineTool\spine-unity\Assets\spine-unity\Modules\SkeletonRenderSeparator\Editor\SkeletonPartsRendererInspector.cs" />
+    <Compile Include="Assets\SpineTool\spine-unity\Assets\spine-unity\Modules\SkeletonRenderSeparator\Editor\SkeletonRenderSeparatorInspector.cs" />
+    <Compile Include="Assets\SpineTool\spine-unity\Assets\spine-unity\Modules\SlotBlendModes\Editor\SlotBlendModesEditor.cs" />
+    <Compile Include="Assets\SpineTool\spine-unity\Assets\spine-unity\Modules\Timeline\SpineAnimationState\Editor\SpineAnimationStateDrawer.cs" />
+    <Compile Include="Assets\SpineTool\spine-unity\Assets\spine-unity\Modules\Timeline\SpineSkeletonFlip\Editor\SpineSkeletonFlipDrawer.cs" />
+    <Compile Include="Assets\SpineTool\spine-unity\Assets\spine-unity\SkeletonUtility\Editor\SkeletonUtilityBoneInspector.cs" />
+    <Compile Include="Assets\SpineTool\spine-unity\Assets\spine-unity\SkeletonUtility\Editor\SkeletonUtilityInspector.cs" />
+    <None Include="Assets\SpineTool\spine-unity\Assets\spine-unity\Editor\Resources\SpineAssetDatabaseMarker.txt" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/lilis/OneDrive/Documents/프로토타입/BeltProto (3)/BeltProto (3)/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/lilis/OneDrive/Documents/프로토타입/BeltProto (3)/BeltProto (3)/3rd-Proto/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/lilis/OneDrive/Documents/프로토타입/BeltProto (3)/BeltProto (3)/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/lilis/OneDrive/Documents/프로토타입/BeltProto (3)/BeltProto (3)/3rd-Proto/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/lilis/OneDrive/Documents/프로토타입/BeltProto (3)/BeltProto (3)/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/lilis/OneDrive/Documents/프로토타입/BeltProto (3)/BeltProto (3)/3rd-Proto/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/lilis/OneDrive/Documents/프로토타입/BeltProto (3)/BeltProto (3)/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/lilis/OneDrive/Documents/프로토타입/BeltProto (3)/BeltProto (3)/3rd-Proto/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -340,27 +368,6 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
-    <Reference Include="DOTweenEditor">
-      <HintPath>C:/Users/lilis/OneDrive/Documents/프로토타입/BeltProto (3)/BeltProto (3)/Assets/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTweenProEditor">
-      <HintPath>C:/Users/lilis/OneDrive/Documents/프로토타입/BeltProto (3)/BeltProto (3)/Assets/Demigiant/DOTweenPro/Editor/DOTweenProEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTweenUpgradeManager">
-      <HintPath>C:/Users/lilis/OneDrive/Documents/프로토타입/BeltProto (3)/BeltProto (3)/Assets/Demigiant/DOTween/Editor/DOTweenUpgradeManager.dll</HintPath>
-    </Reference>
-    <Reference Include="DemiLib">
-      <HintPath>C:/Users/lilis/OneDrive/Documents/프로토타입/BeltProto (3)/BeltProto (3)/Assets/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTween">
-      <HintPath>C:/Users/lilis/OneDrive/Documents/프로토타입/BeltProto (3)/BeltProto (3)/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
-    </Reference>
-    <Reference Include="DemiEditor">
-      <HintPath>C:/Users/lilis/OneDrive/Documents/프로토타입/BeltProto (3)/BeltProto (3)/Assets/Demigiant/DemiLib/Core/Editor/DemiEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTweenPro">
-      <HintPath>C:/Users/lilis/OneDrive/Documents/프로토타입/BeltProto (3)/BeltProto (3)/Assets/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
     </Reference>
@@ -397,7 +404,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{293E5D0A-BD29-1644-B652-5C86C180574C}</Project>
+      <Project>{4019FC6C-7110-8EF6-9038-25CDFA29FBC8}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
   </ItemGroup>

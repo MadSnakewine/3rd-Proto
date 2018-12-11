@@ -8,12 +8,12 @@ public class Player : MonoBehaviour {
     public float maxSpeed = 4;
     public float jumpForce = 400;
     public float minHeight, maxHeight;
-
-    public float maxHp = 100.0f; 
-    public float HP = 100.0f;
+    public float maxHp = 200; 
+    public float HP = 200;
     public float maxUltimate = 100.0f;
     public float ultimate= 0.0f; //궁극기 게이지
 
+    private float currentHP;
     private float currentSpeed;
     private Rigidbody rb;
     private Animator anim;
@@ -22,7 +22,7 @@ public class Player : MonoBehaviour {
     private bool isDead = false;
     private bool facingRight = true;
     private bool jump = false;
-    
+
     private Slider hpGage;
     private Slider ultimateGage;
 
@@ -34,9 +34,14 @@ public class Player : MonoBehaviour {
         groundCheck = gameObject.transform.Find("GroundCheck");
 
         currentSpeed = maxSpeed;
-
+        currentHP = maxHp;
+        
         hpGage = GameObject.Find("Canvas").transform.Find("HpGage").GetComponent<Slider>();
+        
         ultimateGage = GameObject.Find("Canvas").transform.Find("UltimateGage").GetComponent<Slider>();
+
+
+
     }
 	
 	// Update is called once per frame
@@ -117,5 +122,15 @@ public class Player : MonoBehaviour {
     void ResetSpeed()
     {
         currentSpeed = maxSpeed;
+    }
+    
+    public void TookDamage(int damage)
+    {
+        if (!isDead)
+        {
+            currentHP -= damage;
+            anim.SetTrigger("HitDamage");
+            
+        }
     }
 }
