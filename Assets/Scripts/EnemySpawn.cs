@@ -11,12 +11,14 @@ public class EnemySpawn : MonoBehaviour
     public float spawnTime;
 
     private int currentEnemies;
+
+    
     // Use this for initialization
     void Start()
     {
 
     }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -40,15 +42,15 @@ public class EnemySpawn : MonoBehaviour
         spawnPosition.z = Random.Range(minZ, maxZ);
         if (positionX)
         {
-            spawnPosition = new Vector3(transform.position.x + 10, 0, spawnPosition.z);
+            spawnPosition = new Vector3(transform.position.x + 8, 0, spawnPosition.z);
         }
         else
         {
-            spawnPosition = new Vector3(transform.position.x - 10, 0, spawnPosition.z);
+            spawnPosition = new Vector3(transform.position.x - 8, 0, spawnPosition.z);
         }
         Instantiate(enemy[Random.Range(0, enemy.Length)], spawnPosition, Quaternion.identity);
         currentEnemies++;
-        if (currentEnemies < numberOfEnemies)
+        if (currentEnemies <= numberOfEnemies)
         {
             Invoke("SpawnEnemy", spawnTime);
         }

@@ -8,12 +8,12 @@ public class Player : MonoBehaviour {
     public float maxSpeed = 4;
     public float jumpForce = 400;
     public float minHeight, maxHeight;
-    public float maxHp = 200; 
-    public float HP = 200;
-    public float maxUltimate = 100.0f;
-    public float ultimate= 0.0f; //궁극기 게이지
+    public int maxHp = 200; 
+    public int maxMp = 100;
+    //public float ultimate= 0.0f; //궁극기 게이지
 
-    private float currentHP;
+    private int currentHP;
+    private int currentMP;
     private float currentSpeed;
     private Rigidbody rb;
     private Animator anim;
@@ -23,8 +23,8 @@ public class Player : MonoBehaviour {
     private bool facingRight = true;
     private bool jump = false;
 
-    private Slider hpGage;
-    private Slider ultimateGage;
+    //private Slider hpGage;
+    //private Slider ultimateGage;
 
     // Use this for initialization
     void Start () {
@@ -35,10 +35,11 @@ public class Player : MonoBehaviour {
 
         currentSpeed = maxSpeed;
         currentHP = maxHp;
+        currentMP = maxMp;
         
-        hpGage = GameObject.Find("Canvas").transform.Find("HpGage").GetComponent<Slider>();
+        //hpGage = GameObject.Find("Canvas").transform.Find("HpGage").GetComponent<Slider>();
         
-        ultimateGage = GameObject.Find("Canvas").transform.Find("UltimateGage").GetComponent<Slider>();
+        //ultimateGage = GameObject.Find("Canvas").transform.Find("UltimateGage").GetComponent<Slider>();
 
 
 
@@ -52,17 +53,17 @@ public class Player : MonoBehaviour {
         anim.SetBool("OnGround", onGround);
         anim.SetBool("Dead", isDead);
 
-        hpGage.value = HP / maxHp;
-        ultimateGage.value = ultimate / maxUltimate;
+        //hpGage.value = HP / maxHp;
+        //ultimateGage.value = ultimate / maxUltimate;
 
         if (Input.GetKey(KeyCode.C))
         {
-            HP -= 10;
+            maxHp -= 10;
 
-            ultimate += 8;
+            maxMp += 8;
         }
 
-        if(Input.GetButtonDown("Jump")&&onGround)
+        if (Input.GetButtonDown("Jump")&&onGround)
         {
             jump = true;
         }
@@ -87,11 +88,11 @@ public class Player : MonoBehaviour {
             if (onGround)
                 anim.SetFloat("Speed", Mathf.Abs(rb.velocity.magnitude));
 
-            if (h > 0 && !facingRight)
+            if (h > 0 && facingRight)
             {
                 Flip();
             }
-            else if (h < 0 && facingRight)
+            else if (h < 0 && !facingRight)
             {
                 Flip();
             }
@@ -130,7 +131,7 @@ public class Player : MonoBehaviour {
         {
             currentHP -= damage;
             anim.SetTrigger("HitDamage");
-            
+            FindObjectOfType<HpMpUIManeger>().UpdateHp(currentHP);
         }
     }
 }

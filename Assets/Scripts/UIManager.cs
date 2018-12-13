@@ -10,10 +10,11 @@ public class UIManager : MonoBehaviour {
 
     public Canvas canvas; //DontDestroyOnLoad
 
+
     void Start()
     {
         CategoryText.text = PlayerSkillCa.ToString();
-        GenerateSkillIcons(PlayerSkillCa);
+        GenerateSkillIcons(PlayerSkillCa);   
     }
     void Awake()
     {

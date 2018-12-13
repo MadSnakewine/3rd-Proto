@@ -5,33 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class Boss : Enemy {
 
-    public GameObject boomerang;
-    public float minFireTime, maxFireTime;
-
-    void Awake()
+    void Update()
     {
-        Invoke("ThrowBoomerang", Random.Range(minFireTime, maxFireTime));
-    }
-
-    void ThrowBoomerang()
-    {
-        if (!isDead)
+        if (isDead)
         {
-            anim.SetTrigger("Boomerang");
-            GameObject tempBoomerang = Instantiate(boomerang, transform.position, transform.rotation);
-            if (facingRight)
-            {
-                tempBoomerang.GetComponent<Boomerang>().direction = 1;
-            }
-            else
-            {
-                tempBoomerang.GetComponent<Boomerang>().direction = -1;
-            }
-            Invoke("ThrowBoomerang", Random.Range(minFireTime, maxFireTime));
+            Destroy(gameObject, 1f);
+            
         }
     }
-
-   void BossDefeated()
+    
+    void BossDefeated()
     {
         Invoke("LoadScene", 8f);
     }
