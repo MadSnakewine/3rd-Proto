@@ -10,20 +10,20 @@ public class Enemy : MonoBehaviour {
     public int maxHealth;
     public float attackRate = 1f;
 
-    private int currentHealth;
-    private float currentSpeed;
-    private Rigidbody rb;
+    protected int currentHealth;
+    protected float currentSpeed;
+    protected Rigidbody rb;
     protected Animator anim;
-    private Transform groundCheck;
-    private bool onGround;
+    protected Transform groundCheck;
+    protected bool onGround;
     protected bool facingRight = false;
-    private Transform target;
+    protected Transform target;
     protected bool isDead = false;
-    private float zForce;
-    private float walkTimer;
-    private bool damaged = false;
-    private float damageTimer;
-    private float nextAttack;
+    protected float zForce;
+    protected float walkTimer;
+    protected bool damaged = false;
+    protected float damageTimer;
+    protected float nextAttack;
 
 
     // Use this for initialization
