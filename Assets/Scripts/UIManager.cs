@@ -26,6 +26,29 @@ public class UIManager : MonoBehaviour {
     {
         Debug.Log("왼쪽버튼"+LeftBtn);
         ChangeCategoryUI(LeftBtn);
+
+        if (CategoryText.text == "Equipment")
+        {
+            GameObject.Find("Canvas").transform.Find("SkillWindow").Find("Scroll View").Find("Viewport")
+                .Find("SkillInven").Find("KeyQ").gameObject.SetActive(false);
+
+            GameObject.Find("Canvas").transform.Find("SkillWindow").Find("Scroll View").Find("Viewport")
+                .Find("SkillInven").Find("KeyW").gameObject.SetActive(false);
+
+            GameObject.Find("Canvas").transform.Find("SkillWindow").Find("Scroll View").Find("Viewport")
+                .Find("SkillInven").Find("KeyE").gameObject.SetActive(false);
+        }
+        else
+        {
+            GameObject.Find("Canvas").transform.Find("SkillWindow").Find("Scroll View").Find("Viewport")
+                .Find("SkillInven").Find("KeyQ").gameObject.SetActive(true);
+
+            GameObject.Find("Canvas").transform.Find("SkillWindow").Find("Scroll View").Find("Viewport")
+                .Find("SkillInven").Find("KeyW").gameObject.SetActive(true);
+
+            GameObject.Find("Canvas").transform.Find("SkillWindow").Find("Scroll View").Find("Viewport")
+                .Find("SkillInven").Find("KeyE").gameObject.SetActive(true);
+        }
     }
     public PlayerSkillCategory PlayerSkillCa;
     public int CategoryPos;
@@ -71,29 +94,45 @@ public class UIManager : MonoBehaviour {
 
                 go.GetComponent<Image>().sprite = skill.SkillIcon;
                 go.GetComponentInChildren<Text>().text = skill.Name;
+
+                if (CategoryText.text != "Equipment")
+                    go.AddComponent<ImgDrag>();
+
+                go.AddComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+                go.AddComponent<BoxCollider2D>().size = new Vector2(40,40); 
+
+
                 go.GetComponent<Button>().onClick.AddListener(()=>SkillBtnPressed(go.GetComponent<Button>()));
             }
         }
     }
     
-     int changePos = 1;
+    public int changePos;
 
     public void SkillInven()
     {
-        for (int i = 0; i < KeyUIs.Length; i++)
-        {
-            if(KeyUIs[i].name == EventSystem.current.currentSelectedGameObject.name) // KeyUIs 자식이랑  스킬창안에 있는 QWE 버튼 누른것이 같으면 
-            {
-                changePos = i; // KeyUIs 자식번호 대입
-                break;
-            }
-        }
-        
+        //for (int i = 0; i < KeyUIs.Length; i++)
+        //{
+        //    if(KeyUIs[i].name == EventSystem.current.currentSelectedGameObject.name) // KeyUIs 자식이랑  스킬창안에 있는 QWE 버튼 누른것이 같으면 
+        //    {
+        //        changePos = i; // KeyUIs 자식번호 대입
+        //        break;
+        //    }
+        //}
+
+        //Debug.Log(changePos);
     }
 
     public void SkillChangeAccept()
     {
-        ChangeSkillKey(changePos, currentSkill);
+        if (CategoryText.text != "Equipment")
+        {
+            ChangeSkillKey(changePos, currentSkill);
+        }
+        else
+        {
+            ChangeWeapon(changePos, currentSkill);
+        }
     }
     public GameObject[] KeyUIs;
     public void ChangeSkillKey(int where, PlayerActiveSkill skill)
@@ -112,6 +151,13 @@ public class UIManager : MonoBehaviour {
 
         return;
     }
+
+    public void ChangeWeapon(int where, PlayerActiveSkill skill)
+    {
+        GameObject.Find("Canvas").transform.Find("UICase").Find("Weapon").
+            GetComponent<Image>().sprite = skill.SkillIcon;
+    }
+
     public PlayerActiveSkill currentSkill;
     public void SkillBtnPressed(Button btn)
     {
