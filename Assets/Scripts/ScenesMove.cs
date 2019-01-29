@@ -7,15 +7,33 @@ using UnityEngine.SceneManagement;
 
 public class ScenesMove : MonoBehaviour {
 
-    private void OnCollisionEnter(Collision col)
+    private void OnTriggerStay(Collider other)
     {
         if (SceneManager.GetActiveScene().name != "Lobby")
             return;
 
-        if (col.gameObject.tag== "StageEntrance")
+        if (other.tag == "StageEntrance")
         {
             Debug.Log("충돌");
-            GameObject.Find("Canvas").transform.Find("StageUI").gameObject.SetActive(true);
+
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                GameObject.Find("Canvas").transform.Find("StageUI").gameObject.SetActive(true);
+            }
         }
+
+        if (GameObject.Find("Canvas").transform.Find("StageUI").gameObject.active == true)
+        {
+            if (Input.GetKeyUp(KeyCode.Escape))
+            {
+                GameObject.Find("Canvas").transform.Find("StageUI").gameObject.SetActive(false);
+            }
+
+        }
+    }
+
+    private void OnCollisionStay(Collision col)
+    {
+       
     }
 }

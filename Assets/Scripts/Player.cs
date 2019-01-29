@@ -56,19 +56,12 @@ public class Player : MonoBehaviour {
         //hpGage.value = HP / maxHp;
         //ultimateGage.value = ultimate / maxUltimate;
 
-        if (Input.GetKey(KeyCode.C))
-        {
-            maxHp -= 10;
-
-            maxMp += 8;
-        }
-
-        if (Input.GetButtonDown("Jump")&&onGround)
+        if (Input.GetKeyDown(KeyCode.C) &&onGround)
         {
             jump = true;
         }
 
-        if(Input.GetButtonDown("Fire1"))
+        if(Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.X))
         {
             anim.SetTrigger("Attack");
         }

@@ -3490,7 +3490,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1277458357}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -3544,8 +3544,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1277458357}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.0054, y: 1.907, z: -1.6}
-  m_LocalScale: {x: 3.982859, y: 1, z: 1}
+  m_LocalPosition: {x: 8.973, y: 1.085, z: -1.6}
+  m_LocalScale: {x: 8.347833, y: 6.31398, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -4203,7 +4203,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1429968672}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7, y: -0.73, z: -4}
+  m_LocalPosition: {x: -7, y: -0.73, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
   - {fileID: 2012036073}
@@ -4350,6 +4350,7 @@ MonoBehaviour:
   SkillIconObj: {fileID: 1638610391846738, guid: 93c28b04e6c57274abb6cb05a6f7922b,
     type: 2}
   SkillScroll: {fileID: 2056787367}
+  changePos: 0
   KeyUIs:
   - {fileID: 647260315}
   - {fileID: 1767882762}
@@ -4809,7 +4810,7 @@ GameObject:
   - component: {fileID: 1617090325}
   m_Layer: 0
   m_Name: sp_Papyrus_table
-  m_TagString: Untagged
+  m_TagString: StageEntrance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
