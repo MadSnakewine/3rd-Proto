@@ -36,12 +36,12 @@ public class Player : MonoBehaviour {
         currentSpeed = maxSpeed;
         currentHP = maxHp;
         currentMP = maxMp;
-        
+
         //hpGage = GameObject.Find("Canvas").transform.Find("HpGage").GetComponent<Slider>();
-        
+
         //ultimateGage = GameObject.Find("Canvas").transform.Find("UltimateGage").GetComponent<Slider>();
 
-
+        anim.SetBool("Idle", true);
 
     }
 	
@@ -61,12 +61,13 @@ public class Player : MonoBehaviour {
             jump = true;
         }
 
+
         if(Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.X))
         {
             anim.SetTrigger("Attack");
         }
-		
-	}
+
+    }
     private void FixedUpdate()
     {
         if (!isDead)

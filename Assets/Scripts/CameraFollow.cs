@@ -23,9 +23,12 @@ public class CameraFollow : MonoBehaviour {
 
 	private bool CheckXMargin()
 	{
-		// Returns true if the distance between the camera and the player in the x axis is greater than the x margin.
-		return (transform.position.x - m_Player.position.x) < xMargin;
-	}
+        // Returns true if the distance between the camera and the player in the x axis is greater than the x margin.
+        
+        //return (transform.position.x - m_Player.position.x) < xMargin;
+        
+        return true; // 카메라와 플레이어 사이의 x축 거리가 작아도 무조건 이동되게 변경(플레이어 왼쪽이동 가능하게 변경) 
+    }
 
 
 	//private bool CheckYMargin()

@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
+
 
 public class UIManager : MonoBehaviour {
 
     public static UIManager Instance;
 
     public Canvas canvas; //DontDestroyOnLoad
-
 
     void Start()
     {
@@ -21,6 +22,42 @@ public class UIManager : MonoBehaviour {
         Instance = this;
         DontDestroyOnLoad(canvas);
     }
+
+    void Update()
+    {
+        if (Input.GetKeyDown("i"))
+        {
+            if (SceneManager.GetActiveScene().name != "Lobby")
+                return;
+
+            GameObject.Find("Canvas").transform.Find("SkillWindow").gameObject.SetActive(true);
+        }
+
+        if (GameObject.Find("Canvas").transform.Find("SkillWindow").gameObject.active == true)
+        {
+            if (Input.GetKeyUp(KeyCode.Escape))
+            {
+                GameObject.Find("Canvas").transform.Find("SkillWindow").gameObject.SetActive(false);
+            }
+        }
+
+        if (Input.GetKeyDown("t"))
+        {
+            if (SceneManager.GetActiveScene().name != "Lobby")
+                return;
+
+            GameObject.Find("Canvas").transform.Find("IllustratedBook").gameObject.SetActive(true);
+        }
+
+        if (GameObject.Find("Canvas").transform.Find("IllustratedBook").gameObject.active == true)
+        {
+            if (Input.GetKeyUp(KeyCode.Escape))
+            {
+                GameObject.Find("Canvas").transform.Find("IllustratedBook").gameObject.SetActive(false);
+            }
+        }
+    }
+
     public Text CategoryText;
     public void CategoryBtnPressed(bool LeftBtn)
     {
@@ -169,5 +206,15 @@ public class UIManager : MonoBehaviour {
                 currentSkill = skill;
             }
         }
+    }
+
+    public void EquipsButton()
+    {
+        if (GameObject.Find("Canvas").transform.Find("IllustratedBook").gameObject.active == true)
+        {
+            GameObject.Find("Canvas").transform.Find("IllustratedBook").gameObject.SetActive(false);
+        }
+
+        GameObject.Find("Canvas").transform.Find("SkillWindow").gameObject.SetActive(true);
     }
 }

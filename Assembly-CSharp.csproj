@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Boss.cs" />
     <Compile Include="Assets\Scripts\Boss2.cs" />
     <Compile Include="Assets\Scripts\BtnColl.cs" />
+    <Compile Include="Assets\Scripts\ButtonEvent.cs" />
     <Compile Include="Assets\Scripts\ButtonScript.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\DestroyByTime.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Assets\Scripts\ScenesMove.cs" />
     <Compile Include="Assets\Scripts\SkillInfo.cs" />
     <Compile Include="Assets\Scripts\SkillManager.cs" />
+    <Compile Include="Assets\Scripts\Test.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
     <Compile Include="Assets\SpineTool\spine-csharp\Properties\AssemblyInfo.cs" />
     <Compile Include="Assets\SpineTool\spine-csharp\src\Animation.cs" />

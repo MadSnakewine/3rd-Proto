@@ -22,22 +22,6 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown("i"))
-        {
-            if (SceneManager.GetActiveScene().name != "Lobby")
-                return;
-
-            GameObject.Find("Canvas").transform.Find("SkillWindow").gameObject.SetActive(true);
-        }
-
-        if(GameObject.Find("Canvas").transform.Find("SkillWindow").gameObject.active == true)
-        {
-            if(Input.GetKeyUp(KeyCode.Escape))
-            {
-                GameObject.Find("Canvas").transform.Find("SkillWindow").gameObject.SetActive(false);
-            }
-               
-        }
-        
+		
 	}
 }

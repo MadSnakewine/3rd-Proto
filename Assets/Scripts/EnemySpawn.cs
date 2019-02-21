@@ -39,7 +39,7 @@ public class EnemySpawn : MonoBehaviour
     {
         bool positionX = Random.Range(0, 2) == 0 ? true : false;
         Vector3 spawnPosition;
-        spawnPosition.z = Random.Range(minZ, maxZ);
+        spawnPosition.z = -4;
         if (positionX)
         {
             spawnPosition = new Vector3(transform.position.x + 8, 0, spawnPosition.z);
